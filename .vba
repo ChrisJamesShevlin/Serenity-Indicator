@@ -1,14 +1,16 @@
-mmshort = average[short]
-mmlong = average[long]
-sto = stochastic[14,3]
+// Parameters for the Serenity Index
+ATRPeriod = 14 // ATR Period
+MAPeriod = 50  // Moving Average Period
+RSIPeriod = 14 // RSI Period
 
-if mmshort > mmlong then
-if sto crosses over 20 then
-signal = 1
-else
-signal = 0
-endif
+// Calculate the components
+TRValue = max(high - low, max(abs(high - close[1]), abs(low - close[1]))) // True Range calculation
+ATRValue = average[ATRPeriod](TRValue) // Average True Range
+MALong = average[MAPeriod](close) // Moving Average
+RSIValue = RSI[RSIPeriod] // RSI
 
-endif
+// Serenity Index Calculation
+SerenityIndex = (100 - ATRValue) * (RSIValue / 100) * (close / MALong)
 
-return signal
+// Plot the Serenity Index
+return SerenityIndex
