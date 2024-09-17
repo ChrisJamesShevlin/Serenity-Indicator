@@ -11,7 +11,7 @@ The **Serenity Ratio Indicator** is a custom technical analysis tool that combin
 - [Usage](#usage)
 - [Installation](#installation)
 - [Contributing](#contributing)
-- [License](#license)
+
 
 ## Overview
 
@@ -121,8 +121,6 @@ To use the Serenity Ratio Indicator in your platform:
 
 Contributions are welcome! If you would like to contribute to this project, please fork the repository and submit a pull request with your improvements.
 
-## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
 
 
